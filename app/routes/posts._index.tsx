@@ -36,21 +36,58 @@ export default function Index() {
   const data = useLoaderData<typeof loader>();
 
   return (
-    <div>
-      <Form method={"POST"}>
-        <label htmlFor="title">Title</label>
-        <input type="text" name="title" id="title" />
-        <label htmlFor="body">Body</label>
-        <input type="text" name="body" id="body" />
-        <label htmlFor="userId">User ID</label>
-        <input type="number" name="userId" id="userId" />
-        <button type={"submit"}>Create Post</button>
+    <div className="flex flex-col gap-4">
+      <Form method={"POST"} className="flex gap-2 items-end">
+        <div className="flex flex-col gap-1">
+          <label htmlFor="title" className="text-lg font-semibold">
+            Title
+          </label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            className="block w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="body" className="text-lg font-semibold">
+            Body
+          </label>
+          <input
+            type="text"
+            name="body"
+            id="body"
+            className="block w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <label htmlFor="userId" className="text-lg font-semibold">
+            User ID
+          </label>
+          <input
+            type="number"
+            name="userId"
+            id="userId"
+            className="block w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>
+        <button
+          type={"submit"}
+          className="bg-slate-900 hover:bg-slate-700 text-sm font-semibold text-white rounded-md flex items-center p-2"
+        >
+          Create Post
+        </button>
       </Form>
-      <hr />
+      <hr className="bg-slate-900 border-2" />
       <ul>
         {data.map((d) => (
           <li key={d.id}>
-            <Link to={`/posts/${d.id}`}>{d.title}</Link>
+            <Link
+              to={`/posts/${d.id}`}
+              className="font-semibold text-slate-700"
+            >
+              {d.title}
+            </Link>
           </li>
         ))}
       </ul>

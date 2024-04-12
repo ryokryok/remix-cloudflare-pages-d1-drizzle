@@ -39,15 +39,17 @@ export default function Index() {
   const data = useLoaderData<typeof loader>();
 
   return (
-    <div>
-      <h3>{data.title}</h3>
-      <p>{data.body}</p>
-      <hr />
-      <Link to={"/posts"}>Back to Post List</Link>
+    <div className="flex flex-col gap-2">
+      <h2 className="text-xl font-bold">{data.title}</h2>
+      <p className="text-l">{data.body}</p>
+      <hr className="bg-slate-900 border-2" />
+      <Link to={"/posts"} className="text-sky-700">
+        Back to Post List
+      </Link>
     </div>
   );
 }
 
 export function ErrorBoundary() {
-  return <p>something error to fetch post</p>;
+  return <p className="text-red-700"> something error to fetch post</p>;
 }

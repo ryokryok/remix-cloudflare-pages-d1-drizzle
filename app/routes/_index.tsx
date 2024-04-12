@@ -13,10 +13,12 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Home</h1>
-      <div>
-        <Link to={"/posts"}>Post Page</Link>
+    <div className="mx-auto p-16">
+      <h1 className="text-2xl font-extrabold">Home</h1>
+      <div className="mt-4 leading-7">
+        <Link to={"/posts"} className="font-semibold text-sky-700">
+          Post Page
+        </Link>
       </div>
     </div>
   );

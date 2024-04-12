@@ -2,9 +2,11 @@ import { Outlet } from "@remix-run/react";
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Posts</h1>
-      <Outlet />
+    <div className="mx-auto p-16">
+      <h1 className="text-2xl font-extrabold">Posts</h1>
+      <div className="mt-4 leading-7">
+        <Outlet />
+      </div>
     </div>
   );
 }
