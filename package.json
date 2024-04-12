@@ -1,6 +1,10 @@
 {
   "name": "remix-cf-vite",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Mr_ozin"
+  },
   "sideEffects": false,
   "type": "module",
   "scripts": {
