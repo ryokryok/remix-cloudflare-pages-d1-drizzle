@@ -14,7 +14,10 @@
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "wrangler pages dev ./build/client",
     "typecheck": "tsc",
-    "typegen": "wrangler types"
+    "typegen": "wrangler types",
+    "db:create": "wrangler d1 create dev-remix-d1",
+    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute dev-remix-d1 --remote --file=./schema.sql"
   },
   "dependencies": {
     "@remix-run/cloudflare": "^2.8.1",
