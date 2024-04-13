@@ -1,16 +1,35 @@
-# Welcome to Remix + Vite!
+# Remix (Vite) for Cloudflare Pages + Cloudflare D1
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+It works at Cloudflare Pages.
 
-## Typegen
+[https://remix-cloudflare-pages-d1-34w.pages.dev/]
 
-Generate types for your Cloudflare bindings in `wrangler.toml`:
+Stacks
+
+- [Remix](https://remix.run/)
+- [Vite](https://vitejs.dev/)
+- [Cloudflare Pages](https://pages.cloudflare.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## Initial Setup
+
+This project requires `wrangler.toml` for Cloudflare bindings.
 
 ```sh
-pnpm run typegen
+mv wrangler.toml.sample wrangler.toml
 ```
 
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
+Database setup of Cloudflare D1.
+
+```sh
+pnpm db:create
+```
+
+Local database migration with `schema.sql`.
+
+```sh
+pnpm db:init:local
+```
 
 ## Development
 
@@ -27,11 +46,29 @@ pnpm run build
 pnpm run start
 ```
 
+## Typegen
+
+Generate types for your Cloudflare bindings in `wrangler.toml`:
+
+```sh
+pnpm run typegen
+```
+
+You will need to rerun typegen whenever you make changes to `wrangler.toml`.
+
 ## Deployment
 
-> [!WARNING]  
-> Cloudflare does _not_ use `wrangler.toml` to configure deployment bindings.
-> You **MUST** [configure deployment bindings manually in the Cloudflare dashboard][bindings].
+If you did not create database `dev-remix-d1`, run this command.
+
+```sh
+pnpm db:create
+```
+
+Remote database migration with `schema.sql`.
+
+```sh
+pnpm db:init:remote
+```
 
 First, build your app for production:
 
@@ -45,8 +82,12 @@ Then, deploy your app to Cloudflare Pages:
 pnpm run deploy
 ```
 
-[bindings]: https://developers.cloudflare.com/pages/functions/bindings/
+## Notes
 
-## license
+Configuration via `wrangler.toml` is in open beta.
+
+[Configuration via wrangler.toml](https://developers.cloudflare.com/pages/functions/wrangler-configuration/)
+
+## License
 
 MIT
