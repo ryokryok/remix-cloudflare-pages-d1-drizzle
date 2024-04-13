@@ -19,9 +19,6 @@ export default function Index() {
         <Link to={"/users"} className="font-semibold text-sky-700">
           User Page
         </Link>
-        <Link to={"/posts"} className="font-semibold text-sky-700">
-          Post Page
-        </Link>
       </div>
     </div>
   );
