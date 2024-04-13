@@ -51,5 +51,13 @@ export default function Index() {
 }
 
 export function ErrorBoundary() {
-  return <p className="text-red-700">something error to get user</p>;
+  return (
+    <div className="flex flex-col gap-2">
+      <p className="text-red-700">something error to get user</p>
+      <hr className="bg-slate-900 border-2" />
+      <Link to={"/users"} className="text-sky-700">
+        Back to Users List
+      </Link>
+    </div>
+  );
 }
