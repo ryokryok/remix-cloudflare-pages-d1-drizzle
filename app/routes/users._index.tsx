@@ -5,7 +5,7 @@ import {
   MetaFunction,
   redirect,
 } from "@remix-run/cloudflare";
-import { useLoaderData, Form, useNavigation } from "@remix-run/react";
+import { useLoaderData, Form, useNavigation, Link } from "@remix-run/react";
 import { useEffect, useRef } from "react";
 import { createUser, getUserList } from "~/lib/client";
 
@@ -66,12 +66,12 @@ export default function Index() {
             required
             minLength={1}
             maxLength={100}
-            className="block w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block w-full rounded-md border-0 p-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
           />
         </div>
         <button
           type={"submit"}
-          className="bg-slate-900 hover:bg-slate-700 text-sm font-semibold text-white rounded-md flex items-center p-2"
+          className="bg-slate-900 hover:bg-slate-700 text-sm font-semibold text-white rounded-md flex items-center p-2.5"
         >
           Create User
         </button>
@@ -84,8 +84,11 @@ export default function Index() {
             <th className="w-1/6 border border-slate-300 font-semibold text-left p-4">
               ID
             </th>
-            <th className="w-5/6 border border-slate-300 font-semibold text-left p-4">
+            <th className="w-3/6 border border-slate-300 font-semibold text-left p-4">
               Name
+            </th>
+            <th className="w-2/6 border border-slate-300 font-semibold text-left p-4">
+              Created At
             </th>
           </tr>
         </thead>
@@ -94,7 +97,12 @@ export default function Index() {
             <tr key={d.id}>
               <td className="border border-slate-300 text-left p-4">{d.id}</td>
               <td className="border border-slate-300 text-left p-4">
-                {d.name}
+                <Link to={`/users/${d.id}`} className="text-sky-700">
+                  {d.name}
+                </Link>
+              </td>
+              <td className="border border-slate-300 text-left p-4">
+                {d.createdAt}
               </td>
             </tr>
           ))}
