@@ -91,10 +91,10 @@ When you edited `app/lib/schema.ts`, generate SQL file for generate this command
 pnpm db:generate
 ```
 
-and fix SQL path.
+and fix SQL path at `package.json` script.
 
 ```diff
--    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./drizzle/0000_demonic_chameleon.sql",
+-    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./drizzle/0000_neat_medusa.sql",
 +    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./drizzle/<YOUR_GENERATED_SQL_PATH>",
 ```
 
