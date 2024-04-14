@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { getUser } from "~/lib/client";
 
 export const loader = async ({ params, context }: LoaderFunctionArgs) => {
-  const id = params.id;
+  const id = parseInt(params.id ?? "");
   if (!id) {
     throw new Response("Missing ID", { status: 404 });
   }

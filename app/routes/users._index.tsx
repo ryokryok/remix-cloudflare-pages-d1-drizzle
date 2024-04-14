@@ -28,8 +28,11 @@ export async function action({ request, context }: ActionFunctionArgs) {
   const body = await request.formData();
   const userName = body.get("user-name")?.toString();
   const result = await createUser(context.cloudflare.env.DB, {
-    name: userName,
+    name: userName ?? "",
   });
+  if (!result.success) {
+    return json(result.error);
+  }
   return redirect(`/users`);
 }
 
