@@ -18,9 +18,9 @@
     "db:create": "wrangler d1 create dev-remix-d1",
     "db:generate": "drizzle-kit generate:sqlite",
     "db:drop": "drizzle-kit drop",
-    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./drizzle/0000_neat_medusa.sql",
+    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./drizzle/0000_silent_colossus.sql",
     "db:reset:local": "wrangler d1 execute dev-remix-d1 --local --file=./reset.sql",
-    "db:init:remote": "wrangler d1 execute dev-remix-d1 --remote --file=./drizzle/0000_neat_medusa.sql",
+    "db:init:remote": "wrangler d1 execute dev-remix-d1 --remote --file=./drizzle/0000_silent_colossus.sql",
     "db:reset:remote": "wrangler d1 execute dev-remix-d1 --remote --file=./reset.sql"
   },
   "dependencies": {
@@ -35,6 +35,9 @@
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remix-auth": "^3.6.0",
+    "remix-auth-form": "^1.4.0",
+    "remix-auth-google": "^2.0.0",
     "tailwindcss": "^3.4.3",
     "valibot": "^0.30.0"
   },

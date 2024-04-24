@@ -2,6 +2,12 @@ name = "remix-cloudflare-pages-d1"
 pages_build_output_dir = "./build/client"
 compatibility_date = "2024-04-13"
 
+[vars]
+# openssl rand -base64 32
+AUTH_SECRET = ""
+GOOGLE_CLIENT_ID = ""
+GOOGLE_CLIENT_SECRET = ""
+
 [[d1_databases]]
 binding = "DB"                                       # i.e. available in your Worker on env.DB
 database_name = "dev-remix-d1"
