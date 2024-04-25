@@ -102,7 +102,6 @@ export default function Index() {
                 <th className="w-1/6 border border-slate-300 font-semibold text-left p-4">
                   Edit
                 </th>
-
               </tr>
             </thead>
             <tbody>
@@ -116,7 +115,8 @@ export default function Index() {
                     {post.createdAt}
                   </td>
                   <td className="border border-slate-300 text-left p-4">
-                    <Form action="/posts/delete">
+                    <Form action="/posts/delete" method={"POST"} >
+                      <input type="hidden" name="post-id" value={post.id} />
                       <button
                         type={"submit"}
                         className="bg-red-700 hover:bg-red-500 text-sm font-semibold text-white rounded-md flex items-center p-2.5"
@@ -125,7 +125,6 @@ export default function Index() {
                       </button>
                     </Form>
                   </td>
-
                 </tr>
               ))}
             </tbody>
