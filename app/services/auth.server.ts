@@ -32,7 +32,7 @@ export function getAuthenticator(context: AppLoadContext) {
       {
         clientID: context.cloudflare.env.GOOGLE_CLIENT_ID,
         clientSecret: context.cloudflare.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://localhost:5173/auth/google/callback",
+        callbackURL: `${context.cloudflare.env.GOOGLE_CALLBACK_BASE_URL}/auth/google/callback`,
       },
       async ({ accessToken, refreshToken, extraParams, profile }) => {
         const db = getDBClient(context.cloudflare.env.DB);

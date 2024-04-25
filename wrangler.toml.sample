@@ -5,10 +5,11 @@ compatibility_date = "2024-04-13"
 [vars]
 # openssl rand -base64 32
 AUTH_SECRET = ""
+GOOGLE_CALLBACK_BASE_URL = "https://your-app.pages.dev"
 GOOGLE_CLIENT_ID = ""
 GOOGLE_CLIENT_SECRET = ""
 
 [[d1_databases]]
-binding = "DB"                                       # i.e. available in your Worker on env.DB
+binding = "DB" # i.e. available in your Worker on env.DB
 database_name = "dev-remix-d1"
 database_id = "xxxxxxxx"
