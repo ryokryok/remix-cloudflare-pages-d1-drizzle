@@ -18,9 +18,9 @@
     "db:create": "wrangler d1 create dev-remix-d1",
     "db:generate": "drizzle-kit generate:sqlite",
     "db:drop": "drizzle-kit drop",
-    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./drizzle/0000_silent_colossus.sql",
+    "db:init:local": "wrangler d1 execute dev-remix-d1 --local --file=./drizzle/0000_giant_sebastian_shaw.sql",
     "db:reset:local": "wrangler d1 execute dev-remix-d1 --local --file=./reset.sql",
-    "db:init:remote": "wrangler d1 execute dev-remix-d1 --remote --file=./drizzle/0000_silent_colossus.sql",
+    "db:init:remote": "wrangler d1 execute dev-remix-d1 --remote --file=./drizzle/0000_giant_sebastian_shaw.sql",
     "db:reset:remote": "wrangler d1 execute dev-remix-d1 --remote --file=./reset.sql"
   },
   "dependencies": {

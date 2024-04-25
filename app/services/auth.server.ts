@@ -4,9 +4,9 @@ import {
   createCookieSessionStorage,
 } from "@remix-run/cloudflare";
 import { GoogleStrategy } from "remix-auth-google";
-import { drizzle } from "drizzle-orm/d1";
 import { eq } from "drizzle-orm";
 import { users } from "~/lib/schema";
+import { getDBClient } from "~/lib/client.server";
 
 export type User = {
   name: string;
@@ -35,7 +35,7 @@ export function getAuthenticator(context: AppLoadContext) {
         callbackURL: "http://localhost:5173/auth/google/callback",
       },
       async ({ accessToken, refreshToken, extraParams, profile }) => {
-        const db = drizzle(context.cloudflare.env.DB);
+        const db = getDBClient(context.cloudflare.env.DB);
         const exitsUser = await db
           .select()
           .from(users)

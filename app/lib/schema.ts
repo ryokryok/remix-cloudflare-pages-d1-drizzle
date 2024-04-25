@@ -11,3 +11,12 @@ export const users = sqliteTable("users", {
     .notNull()
     .default(sql`(current_timestamp)`),
 });
+
+export const posts = sqliteTable("posts", {
+  id: integer("id").primaryKey(),
+  body: text("body"),
+  userId: integer("user_id").references(() => users.id),
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`(current_timestamp)`),
+});
