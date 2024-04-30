@@ -14,6 +14,12 @@ Stacks
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Drizzle ORM](https://orm.drizzle.team/)
 
+## Get Start
+
+```shell
+pnpx create-remix@latest --template ryokryok/remix-cloudflare-pages-d1-drizzle
+```
+
 ## Initial Setup
 
 This project requires `wrangler.toml` for Cloudflare bindings.
